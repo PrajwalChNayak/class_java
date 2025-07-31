@@ -1,0 +1,58 @@
+Collection 
+
+interface 
+
+List 
+Set 
+
+Feature            HashSet       LinkedHashSet             TreeSet 
+
+Oder                noOrder      insertion                  Sorted 
+Duplication         No              No                      No
+
+Null Value          Yes             Yes                     No
+
+Performance          Fastest        little Slower           Slow 
+
+//Internal Structure  HashTable 
+
+
+
+┌─────────────────┬─────────────┬──────────────┬─────────────┬─────────────┐
+│ Feature         │ HashMap     │ LinkedHashMap│ TreeMap     │ Hashtable   │
+├─────────────────┼─────────────┼──────────────┼─────────────┼─────────────┤
+│ Ordering        │ None        │ Insertion    │ Sorted      │ None        │
+│ Null Keys       │ 1 allowed   │ 1 allowed    │ Not allowed │ Not allowed │
+│ Null Values     │ Allowed     │ Allowed      │ Allowed     │ Not allowed │
+│ Thread Safe     │ No          │ No           │ No          │ Yes         │
+│ Performance     │ O(1)        │ O(1)         │ O(log n)    │ O(1)*       │
+│ Memory Usage    │ Lowest      │ Higher       │ Higher      │ Similar     │
+│ Since Version   │ 1.2         │ 1.4          │ 1.2         │ 1.0         │
+│ Iteration Order │ Random      │ Predictable  │ Sorted      │ Random      │
+└─────────────────┴─────────────┴──────────────┴─────────────┴─────────────┘
+* Hashtable has synchronization overhead
+
+WHEN TO USE EACH:
+✅ HashMap:        General purpose, fastest performance
+✅ LinkedHashMap:  Need insertion/access order, LRU cache
+✅ TreeMap:        Need sorted keys, range operations
+✅ Hashtable:      Legacy code, simple thread safety needed
+
+
+
+Queue 
+Map 
+
+
+
+
+Interface	            Abstract Method	         Parameters	        Return Type	              Brief Description and Use Case
+Predicate<T>	        boolean test(T t)	    One input (T)	    boolean 	               Tests a condition; used for filtering (e.g., in Stream.filter()). Example: Check if a number is even.
+Function<T, R>	        R apply(T t)	        One input (T)	    R	                       Transforms input to output; used for mapping (e.g., Stream.map()). Example: Convert string to its length.
+Consumer<T>	            void accept(T t)	    One input (T)	    void	                   Performs an action without returning anything; used for side effects (e.g., Stream.forEach()). Example: Print each element.
+Supplier<T>	            T get()	                None	            T	                       Provides a value; used for lazy generation (e.g., in Optional.orElseGet()). Example: Generate a random number.
+BiPredicate<L, R>	    boolean test(L l, R r)	Two inputs (L, R)	boolean	                Like Predicate but with two inputs; for comparing pairs.
+BiFunction<T, U, R>	    R apply(T t, U u)	    Two inputs (T, U)	R	                        Like Function but with two inputs; for combining values.
+BiConsumer<T, U>	    void accept(T t, U u)	Two inputs (T, U)	void	                    Like Consumer but with two inputs; for actions on pairs (e.g., Map.forEach()).
+UnaryOperator<T>	    T apply(T t)	        One input (T)	   T (same as input)	                Special Function where input and output types match; for operations like incrementing.
+BinaryOperator<T>	    T apply(T t1, T t2)	    Two inputs (T)	    T	                            Like BiFunction where all types match; used in reductions (e.g., Stream.reduce()).

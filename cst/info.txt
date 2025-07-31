@@ -1,0 +1,22 @@
+//Abstraction 
+
+1)Abstract Class
+
+
+
+
+2)Interface 
+
+// Encapsulation 
+
+
+Access Modifiers            SameClass  SamePackage  Subclass      Different Package
+                                                    ()
+ private.                       +         *             *               *       
+
+ default(no Modifiers)          +         +             *               *
+
+ protected                      +         +             +               *
+
+ public                         +         +             +               +
+
