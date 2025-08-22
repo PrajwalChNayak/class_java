@@ -1,0 +1,17 @@
+//#Connect Database => Java App 
+Connection 
+
+Connection conn = DriverManager.getConnection(dbUrl,user,pass)
+
+//#Used to Execute Query
+Statement 
+Statement stmt = conn.createStatement()
+PreparedStatement pre= conn.preparedStatement();
+
+CallableStatement
+
+//#Collecte the Result 
+ResultSet  rs = stmt.executeQuery(Sqlquery);
+
+CREATE USER 'demo'@'%' IDENTIFIED BY 'c5fn+g9Fb!6';
+

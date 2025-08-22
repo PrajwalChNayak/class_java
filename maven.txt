@@ -1,0 +1,41 @@
+info 
+Project Object Model 
+pom.xml 
+
+src
+    main 
+        java (java SourceCode )
+        resources(resources need by application )
+    test
+        java   (java Test Case JUnit )
+        resources (file)
+
+pom.xml
+
+groupId 
+
+artifactId 
+version
+packaging
+
+
+mvn 
+    compile 
+    test 
+    package
+    install 
+    clean 
+    validate 
+    verify
+
+
+ mvn  archetype:generate -DgroupId=com.example -DartifactId=myproject -DarachetypeArtifactId=maven-archetype-quickstart  -DinteractiveMode=false 
+
+ # Navigate to your project directory
+cd /home/test/Project/class_java/myproject
+
+# Compile the project
+mvn compile
+
+# Run the main class
+mvn exec:java -Dexec.mainClass="com.example.App"
